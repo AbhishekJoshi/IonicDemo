@@ -1,0 +1,44 @@
+{
+    "home": {
+        "TITLE": "Journaling",
+        "INITIAL_CARD_TITLE": "Add a Journal Entry",
+        "INITIAL_CARD": "You can begin by pressing the + icon above. "
+    },
+    "menu": {
+        "TITLE": "Journaling",
+        "LIST_ENTRIES": "List Entries",
+        "SETTINGS": "Settings",
+        "HOME":"Home",
+        "CONTACT":"Contact"
+    },
+    "addJournalPage": {
+        "ENTER_STORY":"Enter your story",
+        "TITLE":"Add a Journal Entry",
+        "LOCATE_BUTTON": "Locate me",
+        "MAP_BUTTON": "Select on Map",
+        "PHOTO_TEXT": "Take a photo",
+        "CAMERA_BUTTON": "Open Camera",
+        "ADD_BUTTON": "Add this Journal",
+        "PLACEHOLDER_HINT": "Great day!",
+        "GETTING_LOCATION": "Getting your location",
+        "TITLE_FIELD": "Title",
+        "LOCATION_ERROR": "Unable to get location",
+        "IMAGE_ERROR": "Could not take the image. Please try again"
+
+    },
+    "setLocationPage": {
+        "CHOOSE_LOCATION": "Choose a location",
+        "CONFIRM": "Confirm",
+        "EXIT":"Exit"
+    },
+    "journalPage": {
+        "LEAVE_BUTTON": "Leave",
+        "DELETE_BUTTON": "Delete"
+    },
+    "settingsPage": {
+        "TITLE": "Settings",
+        "EXIT_APP": "Exit the app for 1 minute and the update will be available for download. ",
+        "UPDATED": "The app is up to date. Version 2.",
+        "NEW_UPDATE": "New update is available "
+    }
+}

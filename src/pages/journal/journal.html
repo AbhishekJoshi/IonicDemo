@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ journalEntry.title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <img [src]="journalEntry.imageUrl">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>{{ journalEntry.description }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <sebm-google-map
+          [latitude]="journalEntry.location.lat"
+          [longitude]="journalEntry.location.lng"
+          [zoom]="16">
+          <sebm-google-map-marker
+            [latitude]="journalEntry.location.lat"
+            [longitude]="journalEntry.location.lng"></sebm-google-map-marker>
+        </sebm-google-map>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button
+          ion-button
+          block
+          (click)="onLeave()">{{ 'journalPage.LEAVE_BUTTON' | translate }}</button>
+      </ion-col>
+      <ion-col>
+        <button
+          ion-button
+          block
+          color="danger"
+          (click)="onDelete()">{{ 'journalPage.DELETE_BUTTON' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

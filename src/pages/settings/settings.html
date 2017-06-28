@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'settingsPage.TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card [hidden]="!isUpdated">
+    <ion-card-content text-center>
+      <ion-card-title>
+        {{ 'settingsPage.UPDATED' | translate }}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  <ion-card [hidden]="isUpdated">
+    <ion-card-content text-center>
+      <ion-card-title>
+        {{ 'settingsPage.NEW_UPDATE' | translate }}
+      </ion-card-title>
+      <p>{{ 'settingsPage.EXIT_APP' | translate }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,108 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'addJournalPage.TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>{{ 'addJournalPage.TITLE_FIELD' | translate }}</ion-label>
+        <ion-input
+          type="text"
+          placeholder="{{ 'addJournalPage.PLACEHOLDER_HINT' | translate }}"
+          name="title"
+          ngModel
+          required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{ 'addJournalPage.ENTER_STORY' | translate }}</ion-label>
+        <ion-textarea
+          name="description"
+          ngModel
+          required></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            block
+            outline
+            type="button"
+            icon-left
+            (click)="onLocate()">
+            <ion-icon name="locate"></ion-icon>
+            {{ 'addJournalPage.LOCATE_BUTTON' | translate }}
+          </button>
+        </ion-col>
+        <ion-col>
+          <button
+            ion-button
+            block
+            outline
+            type="button"
+            icon-left
+            (click)="onOpenMap()">
+            <ion-icon name="map"></ion-icon>
+            {{ 'addJournalPage.MAP_BUTTON' | translate }}
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="locationIsSet">
+        <ion-col>
+        <sebm-google-map
+          [latitude]="location.lat"
+          [longitude]="location.lng"
+          [zoom]="14">
+          <sebm-google-map-marker
+            [latitude]="location.lat"
+            [longitude]="location.lng">
+          </sebm-google-map-marker>
+        </sebm-google-map>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h5>{{ 'addJournalPage.PHOTO_TEXT' | translate }} </h5>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            icon-left
+            block
+            outline
+            type="button"
+            (click)="onTakePhoto()">
+            <ion-icon name="camera"></ion-icon>
+            {{ 'addJournalPage.CAMERA_BUTTON' | translate }} 
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="imageUrl != ''">
+        <ion-col text-center>
+          <img [src]="imageUrl">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button
+            ion-button
+            color="secondary"
+            block
+            type="submit"
+            [disabled]="!f.valid || !locationIsSet || imageUrl == ''">
+            {{ 'addJournalPage.ADD_BUTTON' | translate }} 
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

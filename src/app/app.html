@@ -1,0 +1,20 @@
+<ion-menu [content]="nav">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                {{ 'menu.TITLE' | translate }}
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="onLoad(tabsPage)">
+                <ion-icon name="settings" item-left></ion-icon>
+                 {{ 'menu.LIST_ENTRIES' | translate }}
+            </button>
+        </ion-list>
+        
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="tabsPage" #nav></ion-nav>
